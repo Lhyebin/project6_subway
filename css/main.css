@@ -1,0 +1,475 @@
+/* * {
+    outline: 1px solid tomato;
+} */
+
+:root {
+    --sg: #00852e;
+}
+
+.inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+/* <헤더> */
+.header {
+    padding: 30px 0;
+    position: relative;
+}
+
+.header_wrap::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 7px;
+    background: var(--sg);
+}
+
+.header img {
+    margin: 15px auto 35px auto;
+    display: block;
+}
+
+/* -----다단메뉴----- */
+.header .top_bar {
+    background: #fff;
+}
+
+.header .top_bar>ul {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.header .top_bar>ul>li {
+    position: relative;
+}
+
+.header .sub {
+    height: 0;
+    overflow: hidden;
+
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 999;
+
+    text-align: center;
+    width: 150px;
+    line-height: 40px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #888;
+
+    transition: 0.5s;
+}
+
+.header .top_bar:hover>ul>li .sub {
+    height: 200px;
+}
+
+.header .sub>li:hover {
+    color: var(--sg);
+}
+
+.header .top_bar::before {
+    content: "";
+    position: absolute;
+    top: 150px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    /* border-top: 1px solid #ddd; */
+    background: #fff;
+    z-index: 999;
+    transition: 0.5s;
+}
+
+.header .top_bar:hover::before {
+    height: 220px;
+    transition: 0.5s;
+}
+
+
+
+
+
+/* <🎈상단배너> */
+.main_visual {
+    cursor: pointer;
+}
+
+/* <🎈상단배너 : 다음페이지 딜레이표시> */
+/* .main_visual .menu {
+    position: absolute;
+    bottom: 40%;
+    right: 20%;
+
+    display: flex;
+    gap: 7px;
+    transform: translate(0, 0);
+    padding: 0 15px;
+}
+
+.main_visual .menu li {
+    position: relative;
+    width: 40px;
+}
+
+.main_visual .menu li::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+}
+
+.main_visual .menu li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+}
+
+.main_visual .menu li.on::after {
+    width: 100%;
+    transition: 4s;
+
+}
+
+.main_visual .menu li a {
+    display: block;
+    color: rgba(255, 255, 255, 8);
+}
+
+.main_visual .menu li.on a {
+    color: rgba(255, 255, 255, 1);
+} */
+
+
+
+
+
+/* <🎃베스트메뉴> */
+.main_product {
+    position: relative;
+    padding: 100px 0;
+}
+
+.main_product .arrows {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    max-width: 1400px;
+    width: 100%;
+
+}
+
+.main_product .arrows i {
+    font-size: 15px;
+    color: #000;
+    border: 1px solid #000;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.main_product .arrows i:hover {
+    color: #fff;
+    background: var(--sg);
+    border: none;
+}
+
+.main_product h2 {
+    font-size: 35px;
+    font-weight: 900;
+    text-align: center;
+    font-family: 'Asap', sans-serif;
+    color: var(--sg);
+}
+
+.main_product .pro_cap {
+    text-align: center;
+}
+
+.main_product strong {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 40px;
+}
+
+.main_product p {
+    font-size: 15px;
+    margin: 0 0 10px 0;
+    word-break: keep-all;
+}
+
+
+
+
+
+
+/* <😊주문방법>  */
+
+.main_content {
+    background: #f9f9f9;
+    position: relative;
+    padding: 100px 0;
+}
+
+.main_content h2 {
+    font-size: 35px;
+    font-weight: 900;
+    text-align: center;
+    font-family: 'Asap', sans-serif;
+    color: var(--sg);
+    margin: 0 0 50px 0;
+}
+
+.main_content .content {
+    max-width: 100%;
+}
+
+.main_content .slick-dots {
+    text-align: center;
+    cursor: pointer;
+}
+
+.main_content .slick-dots li {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #ffc20d;
+    margin: 0 5px;
+    border-radius: 30%;
+}
+
+/* <현재슬라이드에 도트 색상 변경> */
+.main_content .slick-dots li.slick-active {
+    background: var(--sg);
+}
+
+.main_content .slick-dots button {
+    display: none;
+}
+
+.main_content figure {
+    width: 1200px;
+    padding: 0 15px;
+    margin: 0 170px;
+    transition: 1s;
+}
+
+.main_content figure:not(.slick-current) {
+    filter: grayscale(1);
+}
+
+.main_content .itm {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.main_content .itm strong {
+    font-size: 20px;
+    font-weight: 900;
+    margin: 0 0 7px 0;
+    color: var(--sg);
+
+}
+
+.main_content .itm h3 {
+    font-size: 23px;
+    font-weight: 700;
+    margin: 0 0 25px 0;
+}
+
+.main_content .itm p {
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.main_content .itm a {
+    margin: auto 0 0 0;
+    align-self: flex-start;
+    font-size: 15px;
+    padding: 3px 15px 4px 15px;
+    border: 1px solid var(--sg);
+    border-radius: 5px;
+    color: var(--sg);
+}
+
+.main_content .itm a:hover {
+    color: #fff;
+    background: var(--sg);
+    border: none;
+}
+
+.main_content .itm.on {
+    display: flex;
+}
+
+.main_content .tab_txt {
+    position: absolute;
+    /* top: 210px; */
+    top: 28%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin: 0 0 0 425px;
+
+    background: #fff;
+    border-radius: 5%;
+
+    width: 350px;
+    height: 400px;
+    padding: 40px 30px;
+
+    box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.1);
+}
+
+.main_content .tab_arrows {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    max-width: 1400px;
+    width: 100%;
+
+}
+
+.main_content .tab_arrows i {
+    font-size: 15px;
+    color: #000;
+    border: 1px solid #000;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.main_content .tab_arrows i:hover {
+    color: #fff;
+    background: var(--sg);
+    border: none;
+}
+
+
+
+
+
+
+/* <서브웨이의 약속> */
+.main_promise {
+    position: relative;
+    padding: 100px 0;
+}
+
+.main_promise .inner {
+    display: flex;
+
+    width: calc((100% - 1200px) / 2 + 1200px);
+    margin: 0 auto 0 0;
+    max-width: 100%;
+    padding: 0 0;
+    gap: 0 30px;
+}
+
+.main_promise h2 {
+    font-size: 35px;
+    font-weight: 900;
+    margin: 0 0 50px 0;
+    text-align: center;
+    font-family: 'Asap', sans-serif;
+    color: var(--sg);
+}
+
+.main_promise .title_promise {
+    display: flex;
+}
+
+.main_promise .img_box {
+    border-radius: 0 100px 0 0;
+    overflow: hidden;
+}
+
+.main_promise .tit {
+    margin: 35px 0 30px 0;
+    align-items: center;
+}
+
+.main_promise .tit strong {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Asap', sans-serif;
+    color: var(--sg);
+}
+
+.main_promise .tit h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin: 4px 0 7px 0;
+}
+
+.main_promise .tit p {
+    font-size: 15px;
+    margin: 4px 0 7px 0;
+}
+
+
+
+
+
+
+.footer {
+    background: #444;
+    color: #e0e0e0;
+    padding: 50px 0;
+    text-align: center;
+    font-size: 13px;
+}
+
+.footer .footer_customer li {
+    display: inline-block;
+    margin: 0 0 5px 0;
+}
+
+.footer .footer_customer li~li::before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    transform: translate(-50%, -0%);
+    background: #e0e0e0;
+    margin: 0 10px;
+}
+
+.footer .copy li {
+    display: inline-block;
+    margin: 0 0 5px 0;
+}
+
+.footer .copy li~li::before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    transform: translate(-50%, -0%);
+    background: #e0e0e0;
+    margin: 0 10px;
+}
